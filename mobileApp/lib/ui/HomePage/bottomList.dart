@@ -61,7 +61,7 @@ class BottomList extends StatelessWidget {
     final List<Seva$Query$User$Owe> oweMe = Provider.of<MeNotifier>(context)
         .me
         .oweMe
-        .fromStates([OweState.CREATED, OweState.ACKNOWLEDGED]);
+        .fromStates([OweState.created, OweState.acknowledged]);
     return ListView.builder(
         itemCount: oweMe.length,
         physics: NeverScrollableScrollPhysics(),

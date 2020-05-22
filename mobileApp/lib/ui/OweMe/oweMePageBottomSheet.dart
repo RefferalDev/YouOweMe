@@ -22,10 +22,10 @@ class OweMePageBottomSheet extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            if ([OweState.ACKNOWLEDGED, OweState.CREATED].contains(owe.state))
+            if ([OweState.acknowledged, OweState.created].contains(owe.state))
               Text("Amount To Be Recieved",
                   style: Theme.of(context).textTheme.headline5)
-            else if (owe.state == OweState.PAID)
+            else if (owe.state == OweState.paid)
               Text("Amount Recieved",
                   style: Theme.of(context).textTheme.headline5),
             RichText(
@@ -42,7 +42,7 @@ class OweMePageBottomSheet extends StatelessWidget {
                 style: Theme.of(context).textTheme.headline5),
             Text(owe.created.simpler,
                 style: Theme.of(context).textTheme.bodyText2),
-            if ([OweState.ACKNOWLEDGED, OweState.CREATED]
+            if ([OweState.acknowledged, OweState.created]
                 .contains(owe.state)) ...[
               SizedBox(
                 height: 20,

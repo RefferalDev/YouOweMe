@@ -47,11 +47,11 @@ packages:
     dependency: "direct dev"
     description:
       path: "."
-      ref: "ditrty/dedup-fix"
-      resolved-ref: "0ce4dddbbc46ed1d9304d0a83b7a655b47aa75aa"
+      ref: beta
+      resolved-ref: "21c43de1d796976e33e8308320be02b90c1f49c7"
       url: "git://github.com/comigor/artemis.git"
     source: git
-    version: "6.0.2-beta.1"
+    version: "6.1.1-beta.1"
   async:
     dependency: transitive
     description:
@@ -79,7 +79,7 @@ packages:
       name: build
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.2"
+    version: "1.3.0"
   build_config:
     dependency: transitive
     description:
@@ -100,21 +100,21 @@ packages:
       name: build_resolvers
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.3.7"
+    version: "1.3.9"
   build_runner:
     dependency: "direct dev"
     description:
       name: build_runner
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.9.0"
+    version: "1.10.0"
   build_runner_core:
     dependency: transitive
     description:
       name: build_runner_core
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.1.0"
+    version: "5.2.0"
   built_collection:
     dependency: transitive
     description:
@@ -402,7 +402,7 @@ packages:
       name: gql
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.3"
+    version: "0.12.4-alpha+1589220294255"
   gql_code_gen:
     dependency: transitive
     description:
@@ -416,28 +416,28 @@ packages:
       name: gql_dedupe_link
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.9"
+    version: "1.0.10"
   gql_exec:
     dependency: transitive
     description:
       name: gql_exec
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.4"
+    version: "0.2.5-alpha+1589220294265"
   gql_http_link:
     dependency: transitive
     description:
       name: gql_http_link
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.7"
+    version: "0.2.9"
   gql_link:
     dependency: transitive
     description:
       name: gql_link
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.3"
+    version: "0.3.1-alpha+1589220294272"
   graphql:
     dependency: transitive
     description:

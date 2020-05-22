@@ -40,8 +40,8 @@ dev_dependencies:
   artemis:
     git:
       url: git://github.com/comigor/artemis.git
-      ref: ditrty/dedup-fix
-  build_runner: ^1.9.0
+      ref: beta
+  build_runner: ^1.10.0
   flutter_test:
     sdk: flutter
 

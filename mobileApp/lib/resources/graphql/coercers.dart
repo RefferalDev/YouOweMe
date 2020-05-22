@@ -1,4 +1,4 @@
-DateTime fromGraphQLDateTimeToDartDateTime(int timestamp) {
+DateTime fromGraphQLTimestampToDartDateTime(int timestamp) {
   return DateTime.fromMillisecondsSinceEpoch(timestamp);
 }
 

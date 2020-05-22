@@ -8,12 +8,13 @@ part of 'seva.graphql.dart';
 
 Seva$Query$User$Owe$User _$Seva$Query$User$Owe$UserFromJson(
     Map<String, dynamic> json) {
+  print("CREATED Value ==> " + json['created'].toString());
   return Seva$Query$User$Owe$User()
     ..id = json['id'] as String
     ..name = json['name'] as String
     ..image = json['image'] as String
     ..mobileNo = json['mobileNo'] as String
-    ..created = fromGraphQLDateTimeToDartDateTime(json['created'] as int);
+    ..created = fromGraphQLTimestampToDartDateTime(json['created'] as int);
 }
 
 Map<String, dynamic> _$Seva$Query$User$Owe$UserToJson(
@@ -27,13 +28,16 @@ Map<String, dynamic> _$Seva$Query$User$Owe$UserToJson(
     };
 
 Seva$Query$User$Owe _$Seva$Query$User$OweFromJson(Map<String, dynamic> json) {
+  print("STATE Value ==> " + json['state'].toString());
+  print(_$enumDecodeNullable(_$OweStateEnumMap, json['state'],
+        unknownValue: OweState.artemisUnknown));
   return Seva$Query$User$Owe()
     ..id = json['id'] as String
     ..title = json['title'] as String
     ..amount = json['amount'] as int
     ..state = _$enumDecodeNullable(_$OweStateEnumMap, json['state'],
-        unknownValue: OweState.ARTEMIS_UNKNOWN)
-    ..created = fromGraphQLDateTimeToDartDateTime(json['created'] as int)
+        unknownValue: OweState.artemisUnknown)
+    ..created = fromGraphQLTimestampToDartDateTime(json['created'] as int)
     ..issuedBy = json['issuedBy'] == null
         ? null
         : Seva$Query$User$Owe$User.fromJson(
@@ -89,11 +93,11 @@ T _$enumDecodeNullable<T>(
 }
 
 const _$OweStateEnumMap = {
-  OweState.CREATED: 'CREATED',
-  OweState.DECLINED: 'DECLINED',
-  OweState.ACKNOWLEDGED: 'ACKNOWLEDGED',
-  OweState.PAID: 'PAID',
-  OweState.ARTEMIS_UNKNOWN: 'ARTEMIS_UNKNOWN',
+  OweState.created: 'CREATED',
+  OweState.declined: 'declined',
+  OweState.acknowledged: 'acknowledged',
+  OweState.paid: 'paid',
+  OweState.artemisUnknown: 'artemisUnknown',
 };
 
 Seva$Query$User _$Seva$Query$UserFromJson(Map<String, dynamic> json) {
@@ -104,7 +108,7 @@ Seva$Query$User _$Seva$Query$UserFromJson(Map<String, dynamic> json) {
     ..oweMeAmount = json['oweMeAmount'] as int
     ..iOweAmount = json['iOweAmount'] as int
     ..mobileNo = json['mobileNo'] as String
-    ..created = fromGraphQLDateTimeToDartDateTime(json['created'] as int)
+    ..created = fromGraphQLTimestampToDartDateTime(json['created'] as int)
     ..oweMe = (json['oweMe'] as List)
         ?.map((e) => e == null
             ? null

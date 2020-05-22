@@ -24,8 +24,9 @@ class Seva$Query$User$Owe$User with EquatableMixin {
   String mobileNo;
 
   @JsonKey(
-      fromJson: fromGraphQLDateTimeToDartDateTime,
-      toJson: fromDartDateTimeToGraphQLTimestamp)
+    fromJson: fromGraphQLTimestampToDartDateTime,
+    toJson: fromDartDateTimeToGraphQLTimestamp,
+  )
   DateTime created;
 
   @override
@@ -46,12 +47,13 @@ class Seva$Query$User$Owe with EquatableMixin {
 
   int amount;
 
-  @JsonKey(unknownEnumValue: OweState.ARTEMIS_UNKNOWN)
+  @JsonKey(unknownEnumValue: OweState.artemisUnknown)
   OweState state;
 
   @JsonKey(
-      fromJson: fromGraphQLDateTimeToDartDateTime,
-      toJson: fromDartDateTimeToGraphQLTimestamp)
+    fromJson: fromGraphQLTimestampToDartDateTime,
+    toJson: fromDartDateTimeToGraphQLTimestamp,
+  )
   DateTime created;
 
   Seva$Query$User$Owe$User issuedBy;
@@ -84,8 +86,9 @@ class Seva$Query$User with EquatableMixin {
   String mobileNo;
 
   @JsonKey(
-      fromJson: fromGraphQLDateTimeToDartDateTime,
-      toJson: fromDartDateTimeToGraphQLTimestamp)
+    fromJson: fromGraphQLTimestampToDartDateTime,
+    toJson: fromDartDateTimeToGraphQLTimestamp,
+  )
   DateTime created;
 
   List<Seva$Query$User$Owe> oweMe;
@@ -122,11 +125,11 @@ class Seva$Query with EquatableMixin {
 }
 
 enum OweState {
-  CREATED,
-  DECLINED,
-  ACKNOWLEDGED,
-  PAID,
-  ARTEMIS_UNKNOWN,
+  created,
+  declined,
+  acknowledged,
+  paid,
+  artemisUnknown,
 }
 
 class SevaQuery extends GraphQLQuery<Seva$Query, JsonSerializable> {

@@ -20,16 +20,16 @@ extension MeUtils on Seva$Query$User {
 
 extension OweUtils on List<Seva$Query$User$Owe> {
   List<Seva$Query$User$Owe> get stateCreated =>
-      this.where((element) => element.state == OweState.CREATED).toList();
+      this.where((element) => element.state == OweState.created).toList();
 
   List<Seva$Query$User$Owe> fromStates(List<OweState> states) =>
       this.where((element) => states.contains(element.state)).toList();
 
   List<Seva$Query$User$Owe> get statePaid =>
-      this.where((element) => element.state == OweState.PAID).toList();
+      this.where((element) => element.state == OweState.paid).toList();
 
   List<Seva$Query$User$Owe> get stateAcknowledged =>
-      this.where((element) => element.state == OweState.ACKNOWLEDGED).toList();
+      this.where((element) => element.state == OweState.acknowledged).toList();
 }
 
 extension DateUtils on DateTime {
