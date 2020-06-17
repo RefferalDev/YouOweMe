@@ -1,14 +1,15 @@
-import 'package:YouOweMe/ui/NewOwe/newOwe.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+// 🌎 Project imports:
+import 'package:YouOweMe/ui/NewOwe/newOwe.dart';
 
 class OweMePageEmptyState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     void goToNewOwe() async {
-      Navigator.of(context).push(MaterialPageRoute(
-          builder: (BuildContext context) => NewOwe(),
-          settings: RouteSettings(name: "New Owe Page")));
+      Navigator.of(context).pushNamed('new_owe_page');
     }
 
     return Padding(

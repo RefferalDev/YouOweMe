@@ -1,20 +1,23 @@
+// 🐦 Flutter imports:
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+import 'package:provider/provider.dart';
+
+// 🌎 Project imports:
 import 'package:YouOweMe/resources/graphql/seva.dart';
 import 'package:YouOweMe/resources/notifiers/meNotifier.dart';
 import 'package:YouOweMe/ui/Abstractions/yomSpinner.dart';
 import 'package:YouOweMe/ui/IOwe/iOwePage.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-import 'package:provider/provider.dart';
 
 class IOweSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Seva$Query$User me = Provider.of<MeNotifier>(context).me;
     void goToIOwePage() {
-      Navigator.of(context).push(MaterialWithModalsPageRoute(
-          builder: (BuildContext context) => IOwePage(),
-          settings: RouteSettings(name: "I Owe Page")));
+      Navigator.of(context).pushNamed('i_owe_page');
     }
 
     return Container(

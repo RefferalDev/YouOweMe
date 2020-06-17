@@ -1,7 +1,11 @@
-import 'package:YouOweMe/resources/helpers.dart';
-
-import './graphql/seva.dart';
+// 📦 Package imports:
+import 'package:YouOweMe/ui/Abstractions/yomTheme.dart';
 import 'package:contacts_service/contacts_service.dart';
+
+// 🌎 Project imports:
+import 'package:YouOweMe/resources/helpers.dart';
+import 'package:flutter/material.dart';
+import './graphql/seva.dart';
 
 extension ListUtils<T> on Iterable<T> {
   num sumBy(num f(T element)) {
@@ -29,7 +33,10 @@ extension OweUtils on List<Seva$Query$User$Owe> {
       this.where((element) => element.state == OweState.paid).toList();
 
   List<Seva$Query$User$Owe> get stateAcknowledged =>
-      this.where((element) => element.state == OweState.acknowledged).toList();
+      this.where((element) => element.state == OweState.ACKNOWLEDGED).toList();
+
+  int get total =>
+      this.map((e) => e.amount).reduce((value, element) => value + element);
 }
 
 extension DateUtils on DateTime {
@@ -72,4 +79,8 @@ extension MeUtils2 on Seva$Query$User$Owe$User {
 extension ContactUtils on Contact {
   String get shortName =>
       this.displayName.split(" ").take(2).map((e) => e[0]).toList().join();
+}
+
+extension YomContext on BuildContext {
+  YomDesign get yomDesign => YomDesign();
 }
