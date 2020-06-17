@@ -13,7 +13,7 @@ GetOwe$Query$Owe$User _$GetOwe$Query$Owe$UserFromJson(
     ..name = json['name'] as String
     ..image = json['image'] as String
     ..mobileNo = json['mobileNo'] as String
-    ..created = fromGraphQLDateTimeToDartDateTime(json['created'] as int);
+    ..created = fromGraphQLTimestampToDartDateTime(json['created'] as int);
 }
 
 Map<String, dynamic> _$GetOwe$Query$Owe$UserToJson(
@@ -32,8 +32,8 @@ GetOwe$Query$Owe _$GetOwe$Query$OweFromJson(Map<String, dynamic> json) {
     ..title = json['title'] as String
     ..amount = json['amount'] as int
     ..state = _$enumDecodeNullable(_$OweStateEnumMap, json['state'],
-        unknownValue: OweState.ARTEMIS_UNKNOWN)
-    ..created = fromGraphQLDateTimeToDartDateTime(json['created'] as int)
+        unknownValue: OweState.artemisUnknown)
+    ..created = fromGraphQLTimestampToDartDateTime(json['created'] as int)
     ..permalink = json['permalink'] as String
     ..issuedBy = json['issuedBy'] == null
         ? null
@@ -90,11 +90,11 @@ T _$enumDecodeNullable<T>(
 }
 
 const _$OweStateEnumMap = {
-  OweState.CREATED: 'CREATED',
-  OweState.DECLINED: 'DECLINED',
-  OweState.ACKNOWLEDGED: 'ACKNOWLEDGED',
-  OweState.PAID: 'PAID',
-  OweState.ARTEMIS_UNKNOWN: 'ARTEMIS_UNKNOWN',
+  OweState.created: 'CREATED',
+  OweState.declined: 'DECLINED',
+  OweState.acknowledged: 'ACKNOWLEDGED',
+  OweState.paid: 'PAID',
+  OweState.artemisUnknown: 'ARTEMIS_UNKNOWN',
 };
 
 GetOwe$Query _$GetOwe$QueryFromJson(Map<String, dynamic> json) {

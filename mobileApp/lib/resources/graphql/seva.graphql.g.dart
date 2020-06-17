@@ -8,7 +8,6 @@ part of 'seva.graphql.dart';
 
 Seva$Query$User$Owe$User _$Seva$Query$User$Owe$UserFromJson(
     Map<String, dynamic> json) {
-  print("CREATED Value ==> " + json['created'].toString());
   return Seva$Query$User$Owe$User()
     ..id = json['id'] as String
     ..name = json['name'] as String
@@ -28,9 +27,6 @@ Map<String, dynamic> _$Seva$Query$User$Owe$UserToJson(
     };
 
 Seva$Query$User$Owe _$Seva$Query$User$OweFromJson(Map<String, dynamic> json) {
-  print("STATE Value ==> " + json['state'].toString());
-  print(_$enumDecodeNullable(_$OweStateEnumMap, json['state'],
-        unknownValue: OweState.artemisUnknown));
   return Seva$Query$User$Owe()
     ..id = json['id'] as String
     ..title = json['title'] as String
@@ -94,10 +90,10 @@ T _$enumDecodeNullable<T>(
 
 const _$OweStateEnumMap = {
   OweState.created: 'CREATED',
-  OweState.declined: 'declined',
-  OweState.acknowledged: 'acknowledged',
-  OweState.paid: 'paid',
-  OweState.artemisUnknown: 'artemisUnknown',
+  OweState.declined: 'DECLINED',
+  OweState.acknowledged: 'ACKNOWLEDGED',
+  OweState.paid: 'PAID',
+  OweState.artemisUnknown: 'ARTEMIS_UNKNOWN',
 };
 
 Seva$Query$User _$Seva$Query$UserFromJson(Map<String, dynamic> json) {
@@ -136,12 +132,12 @@ Map<String, dynamic> _$Seva$Query$UserToJson(Seva$Query$User instance) =>
 
 Seva$Query _$Seva$QueryFromJson(Map<String, dynamic> json) {
   return Seva$Query()
-    ..Me = json['Me'] == null
+    ..me = json['Me'] == null
         ? null
         : Seva$Query$User.fromJson(json['Me'] as Map<String, dynamic>);
 }
 
 Map<String, dynamic> _$Seva$QueryToJson(Seva$Query instance) =>
     <String, dynamic>{
-      'Me': instance.Me?.toJson(),
+      'Me': instance.me?.toJson(),
     };

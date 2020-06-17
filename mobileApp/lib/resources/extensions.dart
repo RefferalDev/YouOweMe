@@ -33,7 +33,7 @@ extension OweUtils on List<Seva$Query$User$Owe> {
       this.where((element) => element.state == OweState.paid).toList();
 
   List<Seva$Query$User$Owe> get stateAcknowledged =>
-      this.where((element) => element.state == OweState.ACKNOWLEDGED).toList();
+      this.where((element) => element.state == OweState.acknowledged).toList();
 
   int get total =>
       this.map((e) => e.amount).reduce((value, element) => value + element);

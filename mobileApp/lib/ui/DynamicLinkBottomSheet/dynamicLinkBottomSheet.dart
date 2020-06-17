@@ -75,10 +75,10 @@ class DynamicLinkBottomSheetContent extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          if ([OweState.ACKNOWLEDGED, OweState.CREATED].contains(owe.state))
+          if ([OweState.acknowledged, OweState.created].contains(owe.state))
             Text("Amount To Be Paid",
                 style: Theme.of(context).textTheme.headline5)
-          else if (owe.state == OweState.PAID)
+          else if (owe.state == OweState.paid)
             Text("Amount Paid", style: Theme.of(context).textTheme.headline5),
           RichText(
             text: TextSpan(
@@ -95,7 +95,7 @@ class DynamicLinkBottomSheetContent extends StatelessWidget {
           Text(owe.created.simpler,
               style: Theme.of(context).textTheme.bodyText2),
           if (owe.issuedTo.id == me.id &&
-              [OweState.ACKNOWLEDGED, OweState.CREATED]
+              [OweState.acknowledged, OweState.created]
                   .contains(owe.state)) ...[
             SizedBox(
               height: 20,
@@ -113,7 +113,7 @@ class DynamicLinkBottomSheetContent extends StatelessWidget {
                   }),
             ),
           ] else if (owe.issuedBy.id == me.id) ...[
-            if ([OweState.ACKNOWLEDGED, OweState.CREATED]
+            if ([OweState.acknowledged, OweState.created]
                 .contains(owe.state)) ...[
               SizedBox(
                 height: 20,

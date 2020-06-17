@@ -50,7 +50,7 @@ class MeNotifier extends ChangeNotifier {
         fetchPolicy: FetchPolicy.cacheAndNetwork));
 
     Seva$Query mappedData = Seva$Query.fromJson(result.data);
-    me = mappedData.Me;
+    me = mappedData.me;
     notifyListeners();
     return me;
   }

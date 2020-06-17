@@ -117,18 +117,24 @@ class Seva$Query with EquatableMixin {
   factory Seva$Query.fromJson(Map<String, dynamic> json) =>
       _$Seva$QueryFromJson(json);
 
-  Seva$Query$User Me;
+  @JsonKey(name: 'Me')
+  Seva$Query$User me;
 
   @override
-  List<Object> get props => [Me];
+  List<Object> get props => [me];
   Map<String, dynamic> toJson() => _$Seva$QueryToJson(this);
 }
 
 enum OweState {
+  @JsonValue("CREATED")
   created,
+  @JsonValue("DECLINED")
   declined,
+  @JsonValue("ACKNOWLEDGED")
   acknowledged,
+  @JsonValue("PAID")
   paid,
+  @JsonValue("ARTEMIS_UNKNOWN")
   artemisUnknown,
 }
 

@@ -1,15 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// 📦 Package imports:
 import 'package:meta/meta.dart';
 import 'package:artemis/artemis.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:equatable/equatable.dart';
 import 'package:gql/ast.dart';
-
-// 🌎 Project imports:
 import 'package:YouOweMe/resources/graphql/coercers.dart';
-
 part 'getOwe.graphql.g.dart';
 
 @JsonSerializable(explicitToJson: true)
@@ -28,8 +24,9 @@ class GetOwe$Query$Owe$User with EquatableMixin {
   String mobileNo;
 
   @JsonKey(
-      fromJson: fromGraphQLDateTimeToDartDateTime,
-      toJson: fromDartDateTimeToGraphQLTimestamp)
+    fromJson: fromGraphQLTimestampToDartDateTime,
+    toJson: fromDartDateTimeToGraphQLTimestamp,
+  )
   DateTime created;
 
   @override
@@ -50,12 +47,13 @@ class GetOwe$Query$Owe with EquatableMixin {
 
   int amount;
 
-  @JsonKey(unknownEnumValue: OweState.ARTEMIS_UNKNOWN)
+  @JsonKey(unknownEnumValue: OweState.artemisUnknown)
   OweState state;
 
   @JsonKey(
-      fromJson: fromGraphQLDateTimeToDartDateTime,
-      toJson: fromDartDateTimeToGraphQLTimestamp)
+    fromJson: fromGraphQLTimestampToDartDateTime,
+    toJson: fromDartDateTimeToGraphQLTimestamp,
+  )
   DateTime created;
 
   String permalink;
@@ -85,11 +83,16 @@ class GetOwe$Query with EquatableMixin {
 }
 
 enum OweState {
-  CREATED,
-  DECLINED,
-  ACKNOWLEDGED,
-  PAID,
-  ARTEMIS_UNKNOWN,
+  @JsonValue("CREATED")
+  created,
+  @JsonValue("DECLINED")
+  declined,
+  @JsonValue("ACKNOWLEDGED")
+  acknowledged,
+  @JsonValue("PAID")
+  paid,
+  @JsonValue("ARTEMIS_UNKNOWN")
+  artemisUnknown,
 }
 
 @JsonSerializable(explicitToJson: true)
